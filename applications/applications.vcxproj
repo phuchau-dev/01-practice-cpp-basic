@@ -127,7 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="applications.cpp" />
+    <ClCompile Include="Addition.cpp" />
+    <ClCompile Include="AdditionExerciseMain.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PrintLine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Addition.h" />
+    <ClInclude Include="AdditionExerciseMain.h" />
+    <ClInclude Include="Exercise.h" />
+    <ClInclude Include="PrintLine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

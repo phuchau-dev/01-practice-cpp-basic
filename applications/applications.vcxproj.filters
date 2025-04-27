@@ -13,10 +13,45 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\basicoperators">
+      <UniqueIdentifier>{5333feae-99e4-480c-b42f-892cbb7fefb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\basicoperators\addition">
+      <UniqueIdentifier>{6e851b54-a4df-4896-b8ab-002231036cfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{e11bebc4-6a87-490e-a80c-2e8e3a90fda5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\printLine">
+      <UniqueIdentifier>{f9810be4-d43f-49db-b783-a23dc6f4d101}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="applications.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Addition.cpp">
+      <Filter>Source Files\basicoperators\addition</Filter>
     </ClCompile>
+    <ClCompile Include="AdditionExerciseMain.cpp">
+      <Filter>Source Files\basicoperators\addition</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintLine.cpp">
+      <Filter>Source Files\utils\printLine</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\basicoperators</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Addition.h">
+      <Filter>Source Files\basicoperators\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditionExerciseMain.h">
+      <Filter>Source Files\basicoperators\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintLine.h">
+      <Filter>Source Files\utils\printLine</Filter>
+    </ClInclude>
+    <ClInclude Include="Exercise.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

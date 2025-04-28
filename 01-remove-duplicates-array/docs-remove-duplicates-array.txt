@@ -1,0 +1,132 @@
+﻿												   🏭 Quy trình nhà máy mô phỏng đoạn code
+Bước 1: Nhập nguyên liệu vào kho (Hàm nhapMang)
+Diễn giải cụ thể: Nhà máy chuẩn bị kho để chứa hàng, mảng mang[100]. Lúc này kho rỗng, chờ người dùng nhập hàng. Người dùng (nhân viên nhập liệu) nhập số lượng sản phẩm (soLuongPhanTu) và giá trị của từng sản phẩm.
+
+Quá trình:
+
+Lặp qua từng vị trí trong mảng (chiSoPhanTu), từ 0 đến soLuongPhanTu - 1.
+
+Dùng cin để nhập giá trị của từng phần tử vào kho.
+
+Dữ liệu được lưu vào mảng mang[].
+
+Ví dụ: Người dùng nhập:
+
+Nhập số lượng phần tử: 5  
+Nhập giá trị mang[0] = 3  
+Nhập giá trị mang[1] = 5  
+Nhập giá trị mang[2] = 3  
+Nhập giá trị mang[3] = 7  
+Nhập giá trị mang[4] = 5  
+Kho sau bước này: [3][5][3][7][5].
+
+Bước 2: Trưng bày nguyên liệu (Hàm xuatMang)
+Diễn giải cụ thể: Nhà máy mở kho, hiển thị toàn bộ sản phẩm có trong kho để kiểm tra.
+
+Quá trình:
+
+Lặp qua từng vị trí trong mảng (chiSoPhanTu), từ 0 đến soLuongPhanTu - 1.
+
+Dùng cout để in giá trị từng sản phẩm trong mảng.
+
+Ví dụ: Kết quả xuất ra:
+
+
+3    5    3    7    5
+Bước 3: Dọn dẹp kho, xóa hàng trùng (Hàm xoaPhanTuTrungNhau)
+Diễn giải cụ thể: Nhà máy phát hiện trong kho có sản phẩm bị trùng và bắt đầu xử lý. Đây là giai đoạn hai robot kiểm tra hàng hóa.
+
+Hoạt động của robot:
+
+Robot 1: Đứng tại từng món hàng đang xét (chiSoDangXet), bắt đầu từ vị trí 0.
+
+Robot 2: Kiểm tra từng món hàng phía sau (chiSoSoSanh), từ chiSoDangXet + 1 đến soLuongPhanTu - 1.
+
+Quá trình kiểm tra:
+
+Nếu mang[chiSoDangXet] bằng mang[chiSoSoSanh], gọi máy xóa (hàm xoaMotPhanTu) để xóa món trùng tại vị trí chiSoSoSanh.
+
+Toàn bộ hàng phía sau dịch lên một vị trí, làm kho gọn lại.
+
+Giảm số lượng sản phẩm trong kho (soLuongPhanTu--).
+
+Robot 2 đứng lại kiểm tra vị trí đó vì sản phẩm vừa dịch lên có thể cũng trùng.
+
+Ví dụ: Với mảng [3][5][3][7][5], sau khi xử lý:
+
+Robot 1 đứng tại 3, Robot 2 phát hiện 3 tại vị trí 2 trùng nhau ➔ gọi máy xóa ➔ còn [3][5][7][5].
+
+Robot 1 nhảy tới 5, Robot 2 phát hiện 5 tại vị trí 3 trùng nhau ➔ gọi máy xóa ➔ còn [3][5][7].
+
+Kết quả: Mảng sau xử lý: [3][5][7].
+
+Bước 4: Xuất kho hoàn thiện (Hàm xuatMang)
+Diễn giải cụ thể: Nhà máy kiểm tra lại danh sách sản phẩm sau khi dọn dẹp. Dùng hàm xuatMang() để hiển thị kho mới, không còn sản phẩm bị trùng.
+
+Ví dụ: Kết quả xuất ra:
+
+
+3    5    7
+📋 Tóm tắt quy trình:
+Nhập hàng: Người dùng nhập số lượng và giá trị sản phẩm.
+
+Trưng bày hàng: Hiển thị danh sách sản phẩm trước khi xử lý.
+
+Dọn hàng trùng: Hai robot kiểm tra và loại bỏ sản phẩm trùng.
+
+Xuất kho: Hiển thị danh sách hoàn chỉnh không còn hàng trùng.
+
+*********************************************************************************************************
+Ví dụ cụ thể dây chuyền vận hành:
+Giả sử nhập:
+
+
+Nhập số lượng phần tử: 6
+Giá trị nhập vào: 2 5 2 7 5 9
+Kho lúc đầu:
+
+
+[2][5][2][7][5][9]
+Quy trình:
+
+Robot 1 đứng tại 2, Robot 2 so sánh:
+
+2 vs 5 ➔ khác.
+
+2 vs 2 ➔ trùng ➔ gọi máy xóa ➔ dịch [7][5][9] lên ➔ còn [2][5][7][5][9].
+
+Robot 2 tiếp tục tại vị trí mới:
+
+2 vs 7 ➔ khác.
+
+2 vs 5 ➔ khác.
+
+2 vs 9 ➔ khác.
+
+Robot 1 nhảy tới 5, Robot 2 so sánh:
+
+5 vs 7 ➔ khác.
+
+5 vs 5 ➔ trùng ➔ gọi máy xóa ➔ dịch [9] lên ➔ còn [2][5][7][9].
+
+Robot 2 tiếp tục:
+
+5 vs 9 ➔ khác.
+
+Robot 1 nhảy tới 7, Robot 2 so sánh:
+
+7 vs 9 ➔ khác.
+
+Robot 1 nhảy tới 9, hết kho.
+
+✅ Kết quả cuối cùng:
+
+
+[2][5][7][9]
+Không còn hàng trùng! ✨
+
+📋 Tóm tắt hình ảnh như nhà máy:
+text
+Copy
+Edit
+Nhập hàng → Trưng bày hàng → Hai robot kiểm tra → Xóa trùng → Dọn kho → Xuất kho hoàn chỉnh
